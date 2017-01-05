@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>Progress Bar Samples</title>
+    </head>
+
+    <body>
+        <script src="libs/x-tag-core.min.js"></script>
+        <script src="templates/progress-bars.js"></script>
+        
+        <style>
+            * {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            td {
+                text-transform: uppercase;
+                text-align: center;
+                padding: 10px;
+                font-weight: bold;
+            }
+        </style>
+
+        <table>
+            <tr>
+                <td colspan="4">Circular Progress Bars</td>
+            </tr>
+            <tr>
+                <td colspan="2">Without status</td>
+                <td colspan="2">With status</td>
+            </tr>
+            <tr>
+                <td>Bar #1</td>
+                <td>Bar #2</td>
+                <td>Bar #3</td>
+                <td>Bar #4<br>(undeterminated)</td>
+            </tr>
+            <tr>
+                <td valign="top"><circular-progress-bar id="bar-1" barcolor="#EE5C42" filledcolor="#8B3626" progressStringFormat="Progress: {p}%" displayTextWhenDone="false"></circular-progress-bar></td>
+                <td valign="top"><circular-progress-bar id="bar-2" barcolor="#7FFF00" filledcolor="#458B00" progressStringFormat="<u>{p}%</u>"></circular-progress-bar></td>
+                <td valign="top"><circular-progress-bar-status id="bar-3" barcolor="#63B8FF" filledcolor="#36648B" progressStringFormat="<b>{p}</b>%" doneText="<b>Hecho!</b>"></circular-progress-bar-status></td>
+                <td valign="top" ><circular-progress-bar-status id="bar-4" doneText="<img src='https://cdn0.iconfinder.com/data/icons/very-basic-android-l-lollipop-icon-pack/24/checkmark-64.png' />"></circular-progress-bar-status></td>
+            </tr>
+        </table>
+
+        <script>
+            function SetBarsAsUndefined()
+            {
+                for(var i = 1; i < 5; i++)
+                {
+                    var bar = document.getElementById("bar-" + i);
+                    bar.setUndeterminated(1);
+                    if(i > 2)
+                    {
+                        bar.status = "Preparing...";
+                    }
+                }
+            }
+
+            function SetBarsAsDefined()
+            {
+                for(var i = 1; i < 4; i++)
+                {
+                    var bar = document.getElementById("bar-" + i);
+                    bar.setUndeterminated(0);
+                }
+
+                
+            }
+            
+            function UpdateBars()
+            {
+                var status_1 = ["Taking the trash out...", "Doing the dishes...", "Washing the car...", "Cleaning the kitchen...", "Organizing books..."];
+                var status_2 = ["Watching netflix...", "Playing chess...", "Going to school...", "Drinking coffee...",  "Coding...", "Sleeping..."];
+
+                for(var i = 1; i < 5; i++)
+                {
+                    var bar = document.getElementById("bar-" + i);
+
+                    if(i == 3)
+                    {
+                        bar.status = status_1[Math.round(bar.progress / 26 - 0.5)];
+                    }
+                    else if(i == 4)
+                    {
+                        bar.status = status_2[Math.round(bar.progress / 20 - 0.5)];
+                    }
+
+                    bar.progress++;
+                }
+
+                if(document.getElementById("bar-1").progress < 100)
+                {
+                    setTimeout(UpdateBars, 100);
+                }
+            }
+
+            window.onload = function()
+            {
+                SetBarsAsUndefined();
+
+                setTimeout(SetBarsAsDefined, 6000);
+          
+                setTimeout(UpdateBars, 6000);
+            }
+        </script>
+    </body>
+</html>
