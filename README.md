@@ -73,5 +73,5 @@ Each bar contains its own attributes and functions. Some bars are inherited from
 
 ## - to-do: 
 - [x] Add circular bars
-- [X] Create a decente `README.md`
+- [X] Create a decent `README.md`
 - [ ] Add more bars
