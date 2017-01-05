@@ -1,5 +1,8 @@
 # progress-bar
 * * *
+## - images
+![](http://i.imgur.com/5SO5YP9.gif)
+* * *
 ## - installation
 
 1. Download the repository
@@ -15,11 +18,7 @@ Just insert one of the progress bar tags and set its attributes.
 
 Example:
 `<circular-progress-bar-status progressStringFormat="{p}%"></circular-progress-bar-status>`
-
-
 * * *
-
-
 ## - bars, attributes and functions:
 Each bar contains its own attributes and functions. Some bars are inherited from each other, those who are inherited will have all the its own attributes and functions plus the parent ones.
 
@@ -64,11 +63,6 @@ Each bar contains its own attributes and functions. Some bars are inherited from
 * status: <br/>
 	* Gets or sets the status that should be displayed under the bar
 	* :heavy_exclamation_mark: This can contain HTML markup (such as `<img>` or `<b>`)
-* * *
-
-## - images
-![](http://i.imgur.com/5SO5YP9.gif)
-
 * * *
 
 ## - to-do: 
