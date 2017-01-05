@@ -202,18 +202,6 @@ var circularProgressBar = xtag.register('circular-progress-bar',
                 return this.getAttribute('circlesize') || 150;
             }
         },
-        maxdegrees: 
-        {
-            attribute: {},
-            set: function(value) 
-            {
-                this.xtag.data.maxdegrees = value;
-            },
-            get: function() 
-            {
-                return this.getAttribute('maxdegrees') || 360;
-            }
-        },
         barsize: 
         {
             attribute: {},
