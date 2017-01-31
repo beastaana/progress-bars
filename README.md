@@ -52,6 +52,7 @@ Each bar contains its own attributes and functions. Some bars are inherited from
 	* Gets or sets the size (thickness?) of the bar
 * circlebackground: <br/>
 	* Gets or sets the hexadecimal color for the circle backgorund
+	
 ##### functions
 * setUndeterminated(isUndeterminated)
     * Sets the bar as defined or undefined
